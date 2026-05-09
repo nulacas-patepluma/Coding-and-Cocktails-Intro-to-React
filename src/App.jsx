@@ -1,3 +1,4 @@
+import WelcomeHeader from './WelcomeHeader';
 import React from 'react';
 import './App.css';
 
