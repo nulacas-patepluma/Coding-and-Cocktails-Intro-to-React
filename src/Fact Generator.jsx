@@ -11,6 +11,10 @@ const personalFacts = [
 const FactGenerator = () => {
     const [currentFact, setCurrentFact] = useState('');
 
+    useEffect(() => {
+        console.log('My fact:', currentFact);
+    }, [currentFact]);
+
     const generateRandomFact = () => {
         if (personalFacts.length > 0) {
             const randomIndex = Math.floor(Math.random() * personalFacts.length);
@@ -24,6 +28,8 @@ const FactGenerator = () => {
             
             <button 
                 className="fact-button" 
+                onClick={generateRandomFact}
+                disabled={personalFacts.length === 0}
             >   
                 Show Me A Fun Fact!
             </button>
